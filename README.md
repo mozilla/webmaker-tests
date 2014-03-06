@@ -106,7 +106,7 @@ https://www.webmaker.org. You may either use or existing persona account (this
 is not reccomened as data may be altered) or create a new account using
 a service like 10minutemail.com.
 
-Copy mozillians-tests/credentials.yaml to a location outside of mozillians-tests and
+Copy webmaker-tests/credentials.yaml to a location outside of webmaker-tests and
 update the 'default' user in credentials.yaml with those credentials.
 
 #### Running tests locally
@@ -119,12 +119,12 @@ Note: If you are running tests on a Mac, run:
 To run tests locally it is as simple as calling <code>py.test</code> with
 several flags. To run testcases that do not modify or delete data:
 
-    py.test --driver=firefox --baseurl=http://www.webmaker.org --credentials=/full/path/to/credentials.yaml .
+    py.test --driver=firefox --baseurl=http://webmaker.mofostaging.org --credentials=/full/path/to/credentials.yaml .
 
 To run testcases that are known to change or delete account data use the
 <code>--destructive</code> flag:
 
-    py.test --driver=firefox --baseurl=http://www.webmaker.org --destructive --credentials=/full/path/to/credentials.yaml .
+    py.test --driver=firefox --baseurl=http://webmaker.mofostaging.org --destructive --credentials=/full/path/to/credentials.yaml .
 
 __Output__
 
