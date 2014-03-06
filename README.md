@@ -1,8 +1,9 @@
-Web QA Tests for webmaker.org
-===============================
+webmaker-tests
+==============
 
-A community phonebook for core contributors
--------------------------------------------
+<<<<<<< HEAD
+a Mozilla project dedicated to helping you create something amazing on the web
+------------------------------------------------------------------------------
 
 Thank you for checking out Mozilla's Webmaker test suite! Mozilla and the Web
 QA team are grateful for the help and hard work of many contributors like yourself.
@@ -102,7 +103,7 @@ to install the required Python libraries.
 
 #### Credentials
 Some of the tests in webmaker-tests require accounts for 
-https://www.webmaker.org. You may either use or existing persona account (this
+https://webmaker.mofostaging.org. You may either use or existing persona account (this
 is not reccomened as data may be altered) or create a new account using
 a service like 10minutemail.com.
 
@@ -191,3 +192,6 @@ This software is licensed under the [MPL] 2.0:
 [GitHub Templates]: https://github.com/mozilla/mozwebqa-test-templates
 [Style Guide]: https://wiki.mozilla.org/QA/Execution/Web_Testing/Docs/Automation/StyleGuide
 [MPL]: http://www.mozilla.org/MPL/2.0/
+=======
+Automation tests for Webmaker.org
+>>>>>>> parent of 48ea9a8... Created files necessary to run and create POM's and tests.
