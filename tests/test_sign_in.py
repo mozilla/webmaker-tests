@@ -26,5 +26,6 @@ class TestSignIn:
         home_page = HomePage(mozwebqa)
         home_page.go_to_page()
         home_page.sign_in()
+        Assert.true(home_page.is_signed_in)
         home_page.sign_out()
         Assert.false(home_page.is_signed_in)
