@@ -12,7 +12,6 @@ import pytest
 
 class TestSignIn:
 
-    @pytest.mark.credentials
     @pytest.mark.nondestructive
     def test_sign_in(self, mozwebqa):
         home_page = HomePage(mozwebqa)
@@ -20,7 +19,6 @@ class TestSignIn:
         home_page.sign_in()
         Assert.true(home_page.is_signed_in)
 
-    @pytest.mark.credentials
     @pytest.mark.nondestructive
     def test_sign_out(self, mozwebqa):
         home_page = HomePage(mozwebqa)
