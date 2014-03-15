@@ -119,12 +119,7 @@ Note: If you are running tests on a Mac, run:
 To run tests locally it is as simple as calling <code>py.test</code> with
 several flags. To run testcases that do not modify or delete data:
 
-    py.test --driver=firefox --baseurl=http://webmaker.mofostaging.org --credentials=/full/path/to/credentials.yaml .
-
-To run testcases that are known to change or delete account data use the
-<code>--destructive</code> flag:
-
-    py.test --driver=firefox --baseurl=http://webmaker.mofostaging.org --destructive --credentials=/full/path/to/credentials.yaml .
+    py.test --driver=firefox --baseurl=http://webmaker.mofostaging.net --credentials=/full/path/to/credentials.yaml .
 
 __Output__
 
