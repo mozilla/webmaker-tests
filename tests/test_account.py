@@ -4,13 +4,13 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import pytest
+from unittestzero import Assert
+
 from pages.home import HomePage
 
-from unittestzero import Assert
-import pytest
 
-
-class TestSignIn:
+class TestAccount:
 
     @pytest.mark.nondestructive
     def test_sign_in(self, mozwebqa):
