@@ -8,9 +8,6 @@ from pages.page import Page
 
 
 class Base(Page):
-    """
-    Base class for global project specific functions
-    """
 
     def sign_in(self, user='default'):
         credentials = self.testsetup.credentials[user]
@@ -34,12 +31,13 @@ class Base(Page):
 
     @property
     def footer(self):
-        """Return the common Footer region."""
         return self.Footer(self.testsetup)
 
     class HeaderRegion(Page):
+
         _login_locator = (By.CSS_SELECTOR, '.webmaker-login')
         _logout_locator = (By.CSS_SELECTOR, '.webmaker-logout')
+        _search_page_locator = (By.LINK_TEXT, 'Search')
 
         def click_sign_in(self):
             self.selenium.find_element(*self._login_locator).click()
@@ -56,12 +54,14 @@ class Base(Page):
         @property
         def is_sign_in_visable(self):
             return self.is_element_visible(*self._login_locator)
+        
+        def go_to_search_page(self):
+            self.selenium.find_element(*self._search_page_locator).click()
+            from pages.search import Search
+            return Search(self.testsetup)
 
     class Footer(Page):
-        """The common Footer region that is present on every page."""
 
-        # The locators in this list contain examples of positional locators, a unique css locator,
-        # and a link text locator
         copyright_links_list = [
             {
                 'locator': (By.CSS_SELECTOR, '#copyright a:nth-of-type(1)'),
