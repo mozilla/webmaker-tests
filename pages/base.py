@@ -52,7 +52,7 @@ class Base(Page):
             self.wait_for_element_visible(*self._login_locator)
 
         @property
-        def is_sign_in_visable(self):
+        def is_sign_in_visible(self):
             return self.is_element_visible(*self._login_locator)
         
         def go_to_search_page(self):
