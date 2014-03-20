@@ -19,5 +19,5 @@ class TestSearch:
         home_page = HomePage(mozwebqa)
         home_page.go_to_page()
         search_page = home_page.header.go_to_search_page()
-        search_page.search('QWERTY')
-        Assert.equal(search_page.search_query, 'QWERTY')
+        search_page.search('makes')
+        Assert.true(search_page.results_count > 0)
