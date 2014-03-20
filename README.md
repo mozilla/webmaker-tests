@@ -41,7 +41,7 @@ in irc.mozilla.org #mozwebqa to ask questions about our Selenium tests.  Mozilla
 also hosts the #mozillians chat room to answer your general questions about
 contributing to Mozilla.
 
-How to setup and run Mozillians tests locally
+How to setup and run Webmaker tests locally
 ---------------------------------------------
 This repository contains Selenium tests used to test https://www.webmaker.org/
 
