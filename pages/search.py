@@ -5,13 +5,11 @@
 
 
 from selenium.webdriver.common.by import By
-from unittestzero import Assert
 
 from pages.base import Base
-from pages.page import Page
 
 
-class Search(Page):
+class Search(Base):
 
     _search_box_locator = (By.ID, 'search-field')
     _search_button_locator = (By.CSS_SELECTOR, 'button.search-btn')
