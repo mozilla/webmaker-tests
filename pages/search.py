@@ -5,18 +5,16 @@
 
 
 from selenium.webdriver.common.by import By
-from unittestzero import Assert
 
 from pages.base import Base
-from pages.page import Page
 
 
-class Search(Page):
+class Search(Base):
 
     _search_box_locator = (By.ID, 'search-field')
     _search_button_locator = (By.CSS_SELECTOR, 'button.search-btn')
     _search_query_word_locator = (By.CSS_SELECTOR, 'span.search-query-word')
-    _result_locator = (By.CSS_SELECTOR, 'DIV.main-gallery.search-gallery')
+    _result_locator = (By.CSS_SELECTOR, 'div.make-search')
 
     def search(self, search_term):
         element = self.selenium.find_element(*self._search_box_locator)
