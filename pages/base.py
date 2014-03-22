@@ -23,7 +23,7 @@ class Base(Page):
 
     @property
     def is_signed_in(self):
-        return not self.header.is_sign_in_visable
+        return not self.header.is_sign_in_visible
 
     @property
     def header(self):
