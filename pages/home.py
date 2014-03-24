@@ -12,12 +12,11 @@ from base import Base
 class HomePage(Base):
 
     _page_title = 'Home - Mozilla Webmaker'
-    _makes_templates_locator = (By.CSS_SELECTOR, 'DIV.make-now-templates')
+    _makes_templates_locator = (By.CSS_SELECTOR, 'DIV.make-now')
 
     def go_to_page(self):
         self.selenium.get(self.base_url + '/')
         self.is_the_current_page
 
-    @property
     def makes_templates_present(self):
-        return self.is_element_present(*self._makes_templates_locator)
+        return len(self.selenium.find_elements(*self._makes_templates_locator))
