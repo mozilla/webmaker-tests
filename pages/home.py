@@ -29,7 +29,7 @@ class HomePage(Base):
 
         def click_events(self):
             self.find_element(*self._get_together_locator).click()
-            from events import EventsPage
+            from events.home import EventsPage
             return EventsPage(self.testsetup)
 
         def click_teach(self):
