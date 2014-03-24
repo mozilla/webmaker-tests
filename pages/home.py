@@ -21,7 +21,7 @@ class HomePage(Base):
 
     def makes_templates_present(self):
         return len(self.selenium.find_elements(*self._makes_templates_locator))
-
+    
     @property
     def center_links(self):
         return self.CenterLinks(self.testsetup)
