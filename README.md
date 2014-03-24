@@ -10,6 +10,10 @@ The following contributors have submitted pull requests to webmaker-tests:
 
 https://github.com/mozilla/webmaker-tests/contributors
 
+Continuous Integration
+----------------------
+[![Build Status](https://secure.travis-ci.org/mozilla/webmaker-tests.png?branch=master)](http://travis-ci.org/mozilla/webmaker-tests/)
+
 Getting involved as a contributor
 ---------------------------------
 
