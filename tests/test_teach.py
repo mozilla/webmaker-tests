@@ -8,7 +8,7 @@
 import pytest
 from unittestzero import Assert
 
-from pages.teach.resources import ResourcesPage
+from pages.home import HomePage
 from tests.base_test import BaseTest
 
 
@@ -16,8 +16,9 @@ class TestTeach(BaseTest):
 
     @pytest.mark.nondestructive
     def test_that_resources_page_display_makes(self, mozwebqa):
-        resources_page = ResourcesPage(mozwebqa)
-        resources_page.go_to_page()
+        home_page = HomePage(mozwebqa)
+        home_page.go_to_page()
 
+        resources_page = home_page.header.go_to_teach_page()
         Assert.greater(resources_page.teach_make_count, 0)
         Assert.true(resources_page.is_teach_makes_visible)

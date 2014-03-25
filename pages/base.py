@@ -39,6 +39,7 @@ class Base(Page):
         _logout_locator = (By.CSS_SELECTOR, '.webmaker-logout')
         _search_page_locator = (By.LINK_TEXT, 'Search')
         _events_page_locator = (By.LINK_TEXT, 'Events')
+        _teach_page_locator = (By.LINK_TEXT, 'Teach')
 
         def click_sign_in(self):
             self.selenium.find_element(*self._login_locator).click()
@@ -65,6 +66,11 @@ class Base(Page):
             self.selenium.find_element(*self._events_page_locator).click()
             from pages.events.home import EventsPage
             return EventsPage(self.testsetup)
+
+        def go_to_teach_page(self):
+            self.selenium.find_element(*self._teach_page_locator).click()
+            from pages.teach.resources import ResourcesPage
+            return ResourcesPage(self.testsetup)
 
     class Footer(Page):
 

@@ -14,10 +14,6 @@ class ResourcesPage(Base):
 
     _teach_make_locator = (By.CSS_SELECTOR, 'div.make-teach')
 
-    def go_to_page(self):
-        self.selenium.get(self.base_url + '/teach')
-        self.is_the_current_page
-
     @property
     def teach_make_count(self):
         return len(self.find_elements(*self._teach_make_locator))
