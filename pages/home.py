@@ -34,8 +34,8 @@ class HomePage(Base):
 
         def click_teach(self):
             self.find_element(*self._teach_locator).click()
-            from teach import TeachPage
-            return TeachPage(self.testsetup)
+            from teach.resources import ResourcesPage
+            return ResourcesPage(self.testsetup)
 
         def click_learn(self):
             self.find_element(*self._learn_locator).click()
