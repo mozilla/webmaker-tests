@@ -73,7 +73,7 @@ class Base(Page):
             from pages.teach.resources import ResourcesPage
             return ResourcesPage(self.testsetup)
 
-        def go_to_make_page(self):
+        def click_on_make_tab(self):
             self.selenium.find_element(*self._make_page_locator).click()
             from pages.make.starter_makes import StarterMakes
             return StarterMakes(self.testsetup)

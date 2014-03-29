@@ -11,8 +11,8 @@ from pages.base import Base
 class StarterMakes(Base):
 
     _page_title = 'Starter Makes - Mozilla Webmaker'
-    _starter_makes_locator = (By.CSS_SELECTOR, 'DIV.make-thumbnail.thumbnail')
+    _starter_makes_locator = (By.CSS_SELECTOR, '.make')
 
     @property
-    def starter_makes_visible(self):
+    def starter_makes_count(self):
         return len(self.selenium.find_elements(*self._starter_makes_locator))
