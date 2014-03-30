@@ -41,6 +41,7 @@ class Base(Page):
         _events_page_locator = (By.LINK_TEXT, 'Events')
         _teach_page_locator = (By.LINK_TEXT, 'Teach')
         _make_page_locator = (By.LINK_TEXT, 'Make')
+        _info_page_locator = (By.LINK_TEXT, 'Info')
 
         def click_sign_in(self):
             self.selenium.find_element(*self._login_locator).click()
@@ -73,10 +74,16 @@ class Base(Page):
             from pages.teach.resources import ResourcesPage
             return ResourcesPage(self.testsetup)
 
+        def go_to_info_page(self):
+            self.selenium.find_element(*self._info_page_locator).click()
+            from pages.info.about import AboutPage
+            return AboutPage(self.testsetup)
+
         def click_on_make_tab(self):
             self.selenium.find_element(*self._make_page_locator).click()
             from pages.make.starter_makes import StarterMakes
             return StarterMakes(self.testsetup)
+
 
     class Footer(Page):
 
