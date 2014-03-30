@@ -8,10 +8,11 @@ from selenium.webdriver.common.by import By
 from pages.base import Base
 
 
-class AboutPage(Base):
+class StarterMakes(Base):
 
-    _hello_message_locator = (By.CSS_SELECTOR, 'div.about-hello')
+    _page_title = 'Starter Makes - Mozilla Webmaker'
+    _starter_makes_locator = (By.CSS_SELECTOR, '.make')
 
     @property
-    def is_hello_message_visible(self):
-        return self.is_element_visible(*self._hello_message_locator)
+    def starter_makes_count(self):
+        return len(self.selenium.find_elements(*self._starter_makes_locator))

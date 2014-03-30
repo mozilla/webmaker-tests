@@ -12,4 +12,10 @@ from pages.home import HomePage
 
 class TestMakes:
 
-    #Test code goes here
+    @pytest.mark.nondestructive
+    def test_verify_make_page_display(self, mozwebqa):
+        home_page = HomePage(mozwebqa)
+        home_page.go_to_page()
+
+        makes_page = home_page.header.click_on_make_tab()
+        Assert.greater(makes_page.starter_makes_count, 0)
