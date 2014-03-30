@@ -21,7 +21,7 @@ class HomePage(Base):
 
     def makes_templates_present(self):
         return len(self.selenium.find_elements(*self._makes_templates_locator))
-    
+
     @property
     def center_links(self):
         return self.CenterLinks(self.testsetup)
@@ -43,5 +43,5 @@ class HomePage(Base):
 
         def click_learn(self):
             self.find_element(*self._learn_locator).click()
-            from make import MakePage
-            return MakePage(self.testsetup)
+            from make.starter_makes import StarterMakes
+            return StarterMakes(self.testsetup)
