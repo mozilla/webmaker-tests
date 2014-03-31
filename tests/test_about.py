@@ -19,5 +19,5 @@ class TestAbout(BaseTest):
         home_page = HomePage(mozwebqa)
         home_page.go_to_page()
 
-        about_page = home_page.header.go_to_info_page()
+        about_page = home_page.header.click_info_tab()
         Assert.true(about_page.is_hello_message_visible)

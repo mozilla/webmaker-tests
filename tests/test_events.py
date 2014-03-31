@@ -19,6 +19,6 @@ class TestEvents(BaseTest):
         home_page = HomePage(mozwebqa)
         home_page.go_to_page()
 
-        events_page = home_page.header.go_to_events_page()
+        events_page = home_page.header.click_events_tab()
         Assert.true(events_page.upcoming_events_count > 0)
         Assert.true(events_page.upcoming_events_is_visible)
