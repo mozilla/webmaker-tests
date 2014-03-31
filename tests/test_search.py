@@ -17,6 +17,6 @@ class TestSearch:
     def test_main_search(self, mozwebqa):
         home_page = HomePage(mozwebqa)
         home_page.go_to_page()
-        search_page = home_page.header.go_to_search_page()
+        search_page = home_page.header.click_search_tab()
         search_page.search('make')
         Assert.greater(search_page.results_count, 0)
