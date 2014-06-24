@@ -21,6 +21,6 @@ class TestTeach(BaseTest):
         home_page = HomePage(mozwebqa)
         home_page.go_to_page()
 
-        resources_page = home_page.header.go_to_teach_page()
+        resources_page = home_page.header.click_teach_tab()
         Assert.greater(resources_page.teach_make_count, 0)
         Assert.true(resources_page.is_teach_makes_visible)

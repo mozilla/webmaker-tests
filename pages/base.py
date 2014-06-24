@@ -42,6 +42,11 @@ class Base(Page):
         _teach_page_locator = (By.LINK_TEXT, 'Teach')
         _make_page_locator = (By.LINK_TEXT, 'Make')
         _info_page_locator = (By.LINK_TEXT, 'Info')
+        _search_tab_locator = (By.LINK_TEXT, 'Search')
+        _events_tab_locator = (By.LINK_TEXT, 'Events')
+        _teach_tab_locator = (By.LINK_TEXT, 'Teach')
+        _make_tab_locator = (By.LINK_TEXT, 'Make')
+        _info_tab_locator = (By.LINK_TEXT, 'Info')
 
         def click_sign_in(self):
             self.selenium.find_element(*self._login_locator).click()
@@ -59,28 +64,32 @@ class Base(Page):
         def is_sign_in_visible(self):
             return self.is_element_visible(*self._login_locator)
 
-        def go_to_search_page(self):
-            self.selenium.find_element(*self._search_page_locator).click()
+        def click_search_tab(self):
+            self.selenium.find_element(*self._search_tab_locator).click()
             from pages.search import Search
             return Search(self.testsetup)
 
-        def go_to_events_page(self):
-            self.selenium.find_element(*self._events_page_locator).click()
+        def click_events_tab(self):
+            self.selenium.find_element(*self._events_tab_locator).click()
             from pages.events.home import EventsPage
             return EventsPage(self.testsetup)
 
-        def go_to_teach_page(self):
-            self.selenium.find_element(*self._teach_page_locator).click()
+        def click_teach_tab(self):
+            self.selenium.find_element(*self._teach_tab_locator).click()
             from pages.teach.resources import ResourcesPage
             return ResourcesPage(self.testsetup)
 
         def go_to_info_page(self):
             self.selenium.find_element(*self._info_page_locator).click()
+
+        def click_info_tab(self):
+            self.selenium.find_element(*self._info_tab_locator).click()
+
             from pages.info.about import AboutPage
             return AboutPage(self.testsetup)
 
         def click_on_make_tab(self):
-            self.selenium.find_element(*self._make_page_locator).click()
+            self.selenium.find_element(*self._make_tab_locator).click()
             from pages.make.starter_makes import StarterMakes
             return StarterMakes(self.testsetup)
 
