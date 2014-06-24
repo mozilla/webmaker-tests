@@ -10,6 +10,8 @@ from unittestzero import Assert
 from pages.home import HomePage
 
 
+@pytest.mark.xfail("'mofostaging.net' in config.getvalue('base_url')",
+       reason="Bug 1029294 - Page title for home page is incorrect")
 class TestMakes:
 
     @pytest.mark.nondestructive

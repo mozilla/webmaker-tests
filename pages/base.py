@@ -37,6 +37,11 @@ class Base(Page):
 
         _login_locator = (By.CSS_SELECTOR, '.webmaker-login')
         _logout_locator = (By.CSS_SELECTOR, '.webmaker-logout')
+        _search_page_locator = (By.LINK_TEXT, 'Search')
+        _events_page_locator = (By.LINK_TEXT, 'Events')
+        _teach_page_locator = (By.LINK_TEXT, 'Teach')
+        _make_page_locator = (By.LINK_TEXT, 'Make')
+        _info_page_locator = (By.LINK_TEXT, 'Info')
         _search_tab_locator = (By.LINK_TEXT, 'Search')
         _events_tab_locator = (By.LINK_TEXT, 'Events')
         _teach_tab_locator = (By.LINK_TEXT, 'Teach')
@@ -74,8 +79,12 @@ class Base(Page):
             from pages.teach.resources import ResourcesPage
             return ResourcesPage(self.testsetup)
 
+        def go_to_info_page(self):
+            self.selenium.find_element(*self._info_page_locator).click()
+
         def click_info_tab(self):
             self.selenium.find_element(*self._info_tab_locator).click()
+
             from pages.info.about import AboutPage
             return AboutPage(self.testsetup)
 
@@ -83,6 +92,7 @@ class Base(Page):
             self.selenium.find_element(*self._make_tab_locator).click()
             from pages.make.starter_makes import StarterMakes
             return StarterMakes(self.testsetup)
+
 
     class Footer(Page):
 
