@@ -39,8 +39,7 @@ class TestHome(BaseTest):
         Assert.true(events_page.is_the_current_page)
 
     @pytest.mark.nondestructive
-    @pytest.mark.xfail("'mofostaging.net' in config.getvalue('base_url')",
-           reason="Bug 985799 - Makes templates are not displayed on the home page")
+    @pytest.mark.xfail(reason="Bug 985799 - Makes templates are not displayed on the home page")
     def test_sample_makes_are_visible_on_home_page(self, mozwebqa):
         home_page = HomePage(mozwebqa)
         home_page.go_to_page()
