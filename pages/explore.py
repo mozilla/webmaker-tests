@@ -14,6 +14,4 @@ class ExplorePage(Base):
     def go_to_explore_page(self):
         home_page = HomePage(mozwebqa)
         home_page.go_to_page()
-
         explore_page = home_page.header.click_on_explore_tab()
-        Assert.true(explore_page.is_the_current_page)
