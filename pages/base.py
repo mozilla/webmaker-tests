@@ -101,7 +101,6 @@ class Base(Page):
             return ExplorePage(self.testsetup)
 
 
-
     class Footer(Page):
 
         copyright_links_list = [
