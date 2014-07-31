@@ -9,9 +9,9 @@ from unittestzero import Assert
 
 from pages.home import HomePage
 
-@pytest.mark.xfail(reason="Bug 1029294 - Page title for home page is incorrect")
 class TestExplorePage:
 
+    @pytest.mark.xfail(reason="Bug 1029294 - Page title for home page is incorrect")
     @pytest.mark.nondestructive
     def test_explore_title(self, mozwebqa):
         home_page = HomePage(mozwebqa)
