@@ -94,12 +94,10 @@ class Base(Page):
             from pages.make.starter_makes import StarterMakes
             return StarterMakes(self.testsetup)
 
-        
         def click_on_explore_tab(self):
             self.selenium.find_element(*self._explore_tab_locator).click()
             from pages.explore import ExplorePage
             return ExplorePage(self.testsetup)
-
 
 
     class Footer(Page):
@@ -119,3 +117,10 @@ class Base(Page):
                 'url_suffix': '/about/'
             }
         ]
+
+        _terms_page_locator = (By.LINK_TEXT, 'Legal')
+
+        def click_on_terms_page(self):
+            self.selenium.find_element(*self._terms_page_locator).click()
+            from pages.terms import TermsPage
+            return TermsPage(self.testsetup)
