@@ -117,10 +117,3 @@ class Base(Page):
                 'url_suffix': '/about/'
             }
         ]
-
-        _terms_page_locator = (By.LINK_TEXT, 'Legal')
-
-        def click_on_terms_page(self):
-            self.selenium.find_element(*self._terms_page_locator).click()
-            from pages.terms import TermsPage
-            return TermsPage(self.testsetup)
