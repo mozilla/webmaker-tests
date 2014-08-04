@@ -47,7 +47,7 @@ class Base(Page):
         _teach_tab_locator = (By.LINK_TEXT, 'Teach')
         _make_tab_locator = (By.LINK_TEXT, 'Make')
         _info_tab_locator = (By.LINK_TEXT, 'Info')
-        _explore_tab_locator = (By.LINK_TEXT, 'Explore')
+        _explore_tab_locator = (By.CSS_SELECTOR, 'a.ng-scope.ng-binding')
 
         def click_sign_in(self):
             self.selenium.find_element(*self._login_locator).click()
@@ -94,7 +94,6 @@ class Base(Page):
             from pages.make.starter_makes import StarterMakes
             return StarterMakes(self.testsetup)
 
-        
         def click_on_explore_tab(self):
             self.selenium.find_element(*self._explore_tab_locator).click()
             from pages.explore import ExplorePage
@@ -118,3 +117,10 @@ class Base(Page):
                 'url_suffix': '/about/'
             }
         ]
+
+        _terms_page_locator = (By.LINK_TEXT, 'Legal')
+
+        def click_on_terms_page(self):
+            self.selenium.find_element(*self._terms_page_locator).click()
+            from pages.terms import TermsPage
+            return TermsPage(self.testsetup)
