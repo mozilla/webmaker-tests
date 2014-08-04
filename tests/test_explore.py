@@ -7,6 +7,7 @@
 import pytest
 from unittestzero import Assert
 
+from pages.explore import ExplorePage
 from pages.home import HomePage
 
 class TestExplorePage:
