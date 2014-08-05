@@ -18,4 +18,6 @@ class TestExplorePage:
         home_page = HomePage(mozwebqa)
         home_page.go_to_page()
         explore_page = home_page.header.click_on_explore_tab()
-        Assert.equal(explore_page._page_title, explore_page.page_title)
+        
+        Assert.true(explore_page.is_page_title_visible)
+        Assert.equal('Explore - Mozilla Webmaker', explore_page.page_title)
