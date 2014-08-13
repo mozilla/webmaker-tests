@@ -10,6 +10,7 @@ from unittestzero import Assert
 from pages.explore import ExplorePage
 from pages.home import HomePage
 
+
 class TestExplorePage:
 
     @pytest.mark.xfail(reason="Bug 1029294 - Page title for home page is incorrect")
@@ -17,6 +18,7 @@ class TestExplorePage:
     def test_explore_title(self, mozwebqa):
         home_page = HomePage(mozwebqa)
         home_page.go_to_page()
+
         explore_page = home_page.header.click_on_explore_tab()
         
         Assert.true(explore_page.is_page_title_visible)
