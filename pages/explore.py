@@ -12,10 +12,6 @@ class ExplorePage(Base):
 
     _explore_title_locator = (By.CSS_SELECTOR, 'title.ng-binding')
 
-    def go_to_explore_page(self):
-        home_page = HomePage(mozwebqa)
-        home_page.go_to_page()
-        explore_page = home_page.header.click_on_explore_tab()
-
+    @property
     def is_page_title_visible(self):
         return self.is_element_visible(*self._explore_title_locator)
