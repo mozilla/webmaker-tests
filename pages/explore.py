@@ -14,4 +14,4 @@ class ExplorePage(Base):
 
     @property
     def is_page_title_visible(self):
-        return self.is_element_visible(*self._explore_title_locator)
+        return self.is_element_visible(*self._explore_title_locator).text
