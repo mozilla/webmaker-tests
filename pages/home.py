@@ -12,7 +12,7 @@ from base import Base
 
 class HomePage(Base):
 
-    _page_title = 'Home - Mozilla Webmaker'
+    _page_title = 'Webmaker'
     _makes_templates_locator = (By.CSS_SELECTOR, 'DIV.make-now')
 
     def go_to_page(self):
