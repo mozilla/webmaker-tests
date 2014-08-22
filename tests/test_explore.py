@@ -22,4 +22,4 @@ class TestExplorePage:
         explore_page = home_page.header.click_on_explore_tab()
         
         Assert.true(explore_page.is_page_title_visible)
-        Assert.equal('Explore - Mozilla Webmaker', explore_page.page_title)
+        Assert.equal('Explore - Mozilla Webmaker', explore_page._is_page_title_visible)
