@@ -117,3 +117,10 @@ class Base(Page):
                 'url_suffix': '/about/'
             }
         ]
+
+        _terms_link_locator = (By.XPATH, '//section[@class="main"]//a[.="Legal"]')
+
+        def click_on_terms_link(self):
+            self.selenium.find_element(*self._terms_link_locator).click()
+            from pages.terms import TermsPage
+            return TermsPage(self.testsetup)
