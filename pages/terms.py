@@ -10,7 +10,7 @@ from base import Base
 
 class TermsPage(Base):
 
-    _terms_title_locator = (By.CSS_SELECTOR, '/html/head/meta[139]')
+    _terms_title_locator = (By.CSS_SELECTOR, 'head > title')
 
     @property
     def is_page_title_visible(self):
