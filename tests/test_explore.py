@@ -7,7 +7,6 @@
 import pytest
 from unittestzero import Assert
 
-from pages.explore import ExplorePage
 from pages.home import HomePage
 
 
@@ -20,6 +19,6 @@ class TestExplorePage:
         home_page.go_to_page()
 
         explore_page = home_page.header.click_on_explore_tab()
-        
+
         Assert.true(explore_page.is_page_title_visible)
         Assert.equal('Explore - Mozilla Webmaker', explore_page._is_page_title_visible)

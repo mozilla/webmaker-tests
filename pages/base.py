@@ -99,7 +99,6 @@ class Base(Page):
             from pages.explore import ExplorePage
             return ExplorePage(self.testsetup)
 
-
     class Footer(Page):
 
         copyright_links_list = [
